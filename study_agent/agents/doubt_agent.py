@@ -4,8 +4,9 @@ import faiss
 import numpy as np
 import pickle
 from utils.prompts import DOUBT_PROMPT
-from utils.llm_clients import model # <-- Import the configured Gemini model
+from utils.llm_clients import model 
 import os
+import google.generativeai as genai  # <-- THIS LINE IS THE FIX for Error 2
 
 VECTOR_STORE_PATH = "vector_store/study_material.index"
 CHUNKS_PATH = "vector_store/chunks.pkl"
@@ -22,7 +23,7 @@ class DoubtAgent:
                 self.text_chunks = pickle.load(f)
             print("DoubtAgent: Initialized and loaded vector store.")
         except Exception as e:
-            print(f"DoubtAgent: Error loading vector store. Has it been created? {e}")
+            print(f"DDoubtAgent: Error loading vector store. Has it been created? {e}")
             self.vector_store = None
             self.text_chunks = []
 
@@ -45,6 +46,7 @@ class DoubtAgent:
         try:
             response = model.generate_content(
                 prompt,
+                # Now the 'genai' import above makes this line work
                 generation_config=genai.types.GenerationConfig(temperature=0.1)
             )
             answer = response.text
