@@ -8,8 +8,8 @@ Do not include any other text before or after the JSON.
 
 Example Output:
 [
-  {"question": "What is an Operating System?", "answer": "Software that manages computer hardware and software resources."},
-  {"question": "Name two types of OS.", "answer": "Batch OS, Real-time OS"}
+  {{"question": "What is an Operating System?", "answer": "Software that manages computer hardware and software resources."}},
+  {{"question": "Name two types of OS.", "answer": "Batch OS, Real-time OS"}}
 ]
 
 Text:
@@ -26,7 +26,7 @@ Return output *only* in a valid JSON list format.
 
 Example Output:
 [
-  {"question": "Which of the following is an OS?", "options": [ "Compiler", "Assembler", "Batch", "Linker"], "answer": "Batch"}
+  {{"question": "Which of the following is an OS?", "options": [ "Compiler", "Assembler", "Batch", "Linker"], "answer": "Batch"}}
 ]
 
 Text:
