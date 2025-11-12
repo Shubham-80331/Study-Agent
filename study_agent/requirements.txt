@@ -1,0 +1,11 @@
+# requirements.txt
+streamlit
+pymupdf
+google-generativeai
+sentence-transformers
+faiss-cpu
+pandas
+numpy
+pytesseract
+pillow
+python-dotenv
